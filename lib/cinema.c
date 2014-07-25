@@ -1,8 +1,8 @@
 #include "cinema.h"
 
-char *getSeat(*theatre, row, seat)
+Number *getSeat(Theatre *theatre, Number row, Number seat)
 {
-  int segment = seat / 16;
-  int offset = seat % 16;
+  Number segment = seat / 16;
+  Number offset = seat % 16;
   return getBit(theatre[row - 1][segment], offset);
 }

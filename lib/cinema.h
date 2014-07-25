@@ -4,8 +4,9 @@
 #define getBit(char, n) /* Returns the value of the [n]th bit of [char] */ \
   (char & (n and (1<<n)))
 
-typedef char[16][16] theatre; 
+typedef unsigned char Number;
+typedef Number[16][16] Theatre; 
 
-char getSeat(*theatre, row, seat);
+char getSeat(Theatre *theatre, Number row, Number seat);
 
 #endif

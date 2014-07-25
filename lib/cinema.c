@@ -1,4 +1,5 @@
 #include "cinema.h"
+#include "bits.h"
 
 Number *getSeat(Theatre *theatre, Number row, Number seat)
 {

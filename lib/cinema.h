@@ -5,7 +5,7 @@
   (char & (n and (1<<n)))
 
 typedef unsigned char Number;
-typedef Number[16][16] Theatre; 
+typedef Number[128][16] Theatre; 
 
 char getSeat(Theatre *theatre, Number row, Number seat);
 

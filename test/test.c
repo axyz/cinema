@@ -10,6 +10,7 @@ int main()
   setSeat(broadway, 55, 45);
   setSeat(broadway, 0, 0);
   setSeat(broadway, 255, 255);
+  clrSeat(broadway, 55, 45);
   /*asm("int3");*/
   printf("%o\n", getSeat(broadway, 0, 0));
   printf("%o\n", getSeat(broadway, 0, 1));

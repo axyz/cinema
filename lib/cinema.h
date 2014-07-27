@@ -1,9 +1,23 @@
 #ifndef CINEMA_H
 #define CINEMA_H
 
-typedef unsigned char Number;
-typedef Number[128][16] Theatre; 
+#define NROWS 32
+#define NSEATS 32
 
-char getSeat(Theatre *theatre, Number row, Number seat);
+typedef unsigned char Number;
+
+typedef Number Bool;
+
+typedef struct {
+  Number seat[NSEATS/8];
+} Row;
+
+typedef struct {
+  Row row[NROWS];
+} Theater;
+
+Bool getSeat(Theater *theater, Number row, Number seat);
+void setSeat(Theater *theater, Number row, Number seat);
+void clrSeat(Theater *theater, Number row, Number seat);
 
 #endif

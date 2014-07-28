@@ -1,23 +1,37 @@
 #ifndef CINEMA_H
 #define CINEMA_H
 
-#define NROWS 32
-#define NSEATS 32
+#define MAX_SEATS 256
+#define MAX_ROWS 256
+#define MAX_BOOKING_SEATS 16
 
 typedef unsigned char Number;
 
 typedef Number Bool;
 
 typedef struct {
-  Number seat[NSEATS/8];
+  Bool seat[MAX_SEATS];
 } Row;
 
 typedef struct {
-  Row row[NROWS];
+  Row row[MAX_ROWS];
 } Theater;
+
+typedef struct {
+  Number row;
+  Number num;
+} Seat;
+
+typedef struct {
+  char id[14];
+  Seat seats[MAX_BOOKING_SEATS];
+} Booking;
 
 Bool getSeat(Theater *theater, Number row, Number seat);
 void setSeat(Theater *theater, Number row, Number seat);
 void clrSeat(Theater *theater, Number row, Number seat);
+
+Booking *makeBooking(Seat seats[]);
+Bool book(Booking *booking, Theater *theater);
 
 #endif

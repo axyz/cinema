@@ -23,7 +23,7 @@ typedef struct {
 } Seat;
 
 typedef struct {
-  char id[14];
+  unsigned long id;
   Seat seats[MAX_BOOKING_SEATS];
 } Booking;
 

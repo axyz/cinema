@@ -5,7 +5,7 @@ default: all
 all:
 
 test:
-	gcc lib/cinema.c test/test.c -o test/test
+	gcc lib/cinema.c lib/hash.c test/test.c -o test/test
 	test/test
 
 clean:

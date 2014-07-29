@@ -2,7 +2,8 @@
 #include <time.h>
 
 /*
-  Hash function with a timestamp * SDBM hash of [string]
+ * The hash is generated multiplying an SDBM hash of the string
+ * with the actual time expressed in time_t format 
  */
 unsigned long hash(char string[])
 {

@@ -48,6 +48,7 @@ typedef struct {
  */
 typedef struct {
   unsigned long id; /**< an id to identify the booking */
+  Number size;
   Seat seats[MAX_BOOKING_SEATS]; /**< the list of Seat the Booking refers to */
 } Booking;
 
@@ -80,13 +81,24 @@ void setSeat(Theater *theater, Number row, Number seat);
 void clrSeat(Theater *theater, Number row, Number seat);
 
 /**
+ * Convert an array of Seat in a string and save it on the pointed string.
+ * the resulting string will be in the form:
+ * "#ROW:COL#ROW:COL#ROW:COL#..."
+ * @see Seat
+ * @param seats the array of Seat.
+ * @param str the pointer of the string were the result will be stored.
+ * @param size the number of element of seats.
+ */
+void seatsToString(Seat seats[], char* str[], Number size);
+
+/**
  * Creates a Booking struct from a list of seats.
  * @see Booking
  * @see Seat
  * @param seat[] an array containing the seats the Booking refers to.
  * @return a pointer to the Booking created.
  */
-Booking *makeBooking(Seat seats[]);
+Booking *makeBooking(Seat seats[], Number size);
 
 /**
  * Execute a Booking updating the theater representation.
@@ -94,7 +106,9 @@ Booking *makeBooking(Seat seats[]);
  * @see Theater
  * @param booking a pointer to a Booking.
  * @param theater a pointer to a Theater.
+ * @param err a pointer to a string that will contain error messages.
+ * @return 0 if the booking was successful, -1 if errors occurred.
  */
-Bool book(Booking *booking, Theater *theater);
+char book(Booking *booking, Theater *theater, char* err[]);
 
 #endif

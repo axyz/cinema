@@ -22,9 +22,9 @@ void clrSeat(Theater *theater, Number row, Number seat)
 /*
  * TO-FIX: not a big issue, but it adds some random char at the end.
  * setting ret to [MAX_BOOKING_SEATS * 8] removes random chars,
- * but do not adds the final #. 
+ * but do not adds the final #.
  */
-void seatsToString(Seat seats[], char* str[], Number size)
+void seatsToString(Seat seats[], char *str, Number size)
 {
   char ret[MAX_BOOKING_SEATS * 8 + 1] = "#";
   char tmp[8];
@@ -40,7 +40,7 @@ Booking *makeBooking(Seat seats[], Number size)
 {
   unsigned long id;
   /* str max size will be MAX_BOOKING_SEATS * 8 (255:255#) + 1 (initial #)*/
-  char *str[MAX_BOOKING_SEATS * 8 + 1];
+  char str[MAX_BOOKING_SEATS * 8 + 1];
   seatsToString(seats, str, size);
   id = hash(str);
   Booking *b = (Booking*)malloc(sizeof(Booking));
@@ -50,7 +50,7 @@ Booking *makeBooking(Seat seats[], Number size)
   return b;
 }
 
-char book(Booking *booking, Theater *theater, char *err[])
+char book(Booking *booking, Theater *theater, char *err)
 {
   char* error;
   Number i;

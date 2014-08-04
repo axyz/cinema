@@ -7,6 +7,6 @@
  * @param string the string to be hashed.
  * @return the hash number as an unsigned long.
  */
-unsigned long hash(char string[]);
+unsigned long hash(char *string);
 
 #endif

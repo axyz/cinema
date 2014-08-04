@@ -55,9 +55,9 @@ typedef struct {
 /**
  * Get the value (0 or 1) of the speicifed seat.
  * @see Theater
- * @param theater a pointer to a theater representation.
- * @param row the row number of the seat.
- * @param seat the seat number.
+ * @param {theater} a pointer to a theater representation.
+ * @param {row} the row number of the seat.
+ * @param {seat} the seat number.
  * @return the flag of the seat (0: available, or 1: occupied).
  */
 Bool getSeat(Theater *theater, Number row, Number seat);
@@ -65,18 +65,18 @@ Bool getSeat(Theater *theater, Number row, Number seat);
 /**
  * Set the value of the speicifed seat to 1 (occupied).
  * @see Theater
- * @param theater a pointer to a theater representation.
- * @param row the row number of the seat.
- * @param seat the seat number.
+ * @param {theater} a pointer to a theater representation.
+ * @param {row} the row number of the seat.
+ * @param {seat} the seat number.
  */
 void setSeat(Theater *theater, Number row, Number seat);
 
 /**
  * Set the value of the speicifed seat to 0 (available).
  * @see Theater
- * @param theater a pointer to a theater representation.
- * @param row the row number of the seat.
- * @param seat the seat number.
+ * @param {theater} a pointer to a theater representation.
+ * @param {row} the row number of the seat.
+ * @param {seat} the seat number.
  */
 void clrSeat(Theater *theater, Number row, Number seat);
 
@@ -85,9 +85,9 @@ void clrSeat(Theater *theater, Number row, Number seat);
  * the resulting string will be in the form:
  * "#ROW:COL#ROW:COL#ROW:COL#..."
  * @see Seat
- * @param seats the array of Seat.
- * @param str the pointer of the string were the result will be stored.
- * @param size the number of element of seats.
+ * @param {seats} the array of Seat.
+ * @param {str} the pointer of the string were the result will be stored.
+ * @param {size} the number of element of seats.
  */
 void seatsToString(Seat seats[], char *str, Number size);
 
@@ -95,7 +95,7 @@ void seatsToString(Seat seats[], char *str, Number size);
  * Creates a Booking struct from a list of seats.
  * @see Booking
  * @see Seat
- * @param seat[] an array containing the seats the Booking refers to.
+ * @param {seats} an array containing the seats the Booking refers to.
  * @return a pointer to the Booking created.
  */
 Booking *makeBooking(Seat seats[], Number size);
@@ -104,9 +104,9 @@ Booking *makeBooking(Seat seats[], Number size);
  * Execute a Booking updating the theater representation.
  * @see Booking
  * @see Theater
- * @param booking a pointer to a Booking.
- * @param theater a pointer to a Theater.
- * @param err a pointer to a string that will contain error messages.
+ * @param {booking} a pointer to a Booking.
+ * @param {theater} a pointer to a Theater.
+ * @param {err} a pointer to a string that will contain error messages.
  * @return 0 if the booking was successful, -1 if errors occurred.
  */
 char book(Booking *booking, Theater *theater, char *err);

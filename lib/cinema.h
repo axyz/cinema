@@ -24,7 +24,7 @@ typedef struct {
 } Row;
 
 /**
- * Struct representing a thater.
+ * Struct representing a theater.
  * row[n] refers to the physical row in the theater labeled n.
  */
 typedef struct {
